@@ -19,6 +19,7 @@ Rather than relying solely on traditional static authentication at login, behavi
 ---
 
 ##  Project Workflow
+```mermaid
 flowchart TD
     A[Keyboard & Mouse Activity] --> B[Data Collection]
     B --> C[5-Second Behavioral Windows]
@@ -30,6 +31,11 @@ flowchart TD
     H --> I[Random Forest Classifier]
     I --> J[5-Fold Stratified Cross-Validation]
     J --> K[Performance Evaluation]
+
+    K --> L[Accuracy]
+    K --> M[Confusion Matrix]
+    K --> N[Classification Report]
+    K --> O[Feature Importance]
 
     K --> L[Accuracy]
     K --> M[Confusion Matrix]
