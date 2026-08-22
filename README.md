@@ -83,7 +83,7 @@ A **Random Forest Classifier** was trained on the extracted feature set. To asse
 
 ---
 
-## 📊 Results
+## Results
 
 | Metric | Score / Detail |
 | :--- | :--- |
