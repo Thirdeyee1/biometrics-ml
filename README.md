@@ -10,7 +10,7 @@ This repository collects behavioral data from users through Python-based monitor
 
 ---
 
-## 🎯 Research Objective
+## Research Objective
 
 The primary objective of this project is to investigate whether keyboard and mouse behavioral biometrics can be used with supervised machine learning to distinguish between users continuously. 
 
@@ -18,4 +18,20 @@ Rather than relying solely on traditional static authentication at login, behavi
 
 ---
 
-## 🔄 Project Workflow
+##  Project Workflow
+flowchart TD
+    A[Keyboard & Mouse Activity] --> B[Data Collection]
+    B --> C[5-Second Behavioral Windows]
+    C --> D[Feature Extraction]
+    D --> E[Gini Mean Decrease in Impurity]
+    E --> F[Feature Ranking]
+    F --> G[Feature Selection]
+    G --> H[70:30 Stratified Train-Test Split]
+    H --> I[Random Forest Classifier]
+    I --> J[5-Fold Stratified Cross-Validation]
+    J --> K[Performance Evaluation]
+
+    K --> L[Accuracy]
+    K --> M[Confusion Matrix]
+    K --> N[Classification Report]
+    K --> O[Feature Importance]
