@@ -20,24 +20,26 @@ Rather than relying solely on traditional static authentication at login, behavi
 
 ##  Project Workflow
 ```mermaid
-flowchart TD
-    A[Keyboard & Mouse Activity] --> B[Data Collection]
-    B --> C[5-Second Behavioral Windows]
-    C --> D[Feature Extraction]
-    D --> E[Gini Mean Decrease in Impurity]
-    E --> F[Feature Ranking]
-    F --> G[Feature Selection]
-    G --> H[70:30 Stratified Train-Test Split]
-    H --> I[Random Forest Classifier]
-    I --> J[5-Fold Stratified Cross-Validation]
-    J --> K[Performance Evaluation]
+flowchart LR
+    subgraph Data ["1. Data Pipeline"]
+        A[Input Activity] --> B[Data Collection]
+        B --> C[5s Windows]
+        C --> D[Feature Extraction]
+    end
 
-    K --> L[Accuracy]
-    K --> M[Confusion Matrix]
-    K --> N[Classification Report]
-    K --> O[Feature Importance]
+    subgraph Selection ["2. Feature Selection"]
+        D --> E[Gini Impurity]
+        E --> F[Feature Ranking]
+        F --> G[Feature Selection]
+    end
 
-    K --> L[Accuracy]
-    K --> M[Confusion Matrix]
-    K --> N[Classification Report]
-    K --> O[Feature Importance]
+    subgraph Model ["3. Modeling & Validation"]
+        G --> H[70:30 Split]
+        H --> I[Random Forest]
+        I --> J[5-Fold CV]
+    end
+
+    subgraph Eval ["4. Evaluation"]
+        J --> K[Performance]
+        K --> L[Accuracy / Matrix / Report]
+    end
