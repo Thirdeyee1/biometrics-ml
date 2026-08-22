@@ -21,21 +21,13 @@ Rather than relying solely on traditional static authentication at login, behavi
 ##  Project Workflow
 ```mermaid
 flowchart TD
-    A[Keyboard & Mouse Activity] --> B[Data Collection]
-    B --> C[5-Second Behavioral Windows]
-    C --> D[Feature Extraction]
-    D --> E[Gini Mean Decrease in Impurity]
-    E --> F[Feature Ranking]
-    F --> G[Feature Selection]
-    G --> H[70:30 Stratified Train-Test Split]
-    H --> I[Random Forest Classifier]
-    I --> J[5-Fold Stratified Cross-Validation]
-    J --> K[Performance Evaluation]
+    A[Keyboard & Mouse Activity] --> B[Data Collection] --> C[5-Second Behavioral Windows] 
+    C --> D[Feature Extraction] --> E[Gini Mean Decrease in Impurity]
+    E --> F[Feature Ranking] --> G[Feature Selection]
+    G --> H[70:30 Stratified Train-Test Split] --> I[Random Forest Classifier]
+    I --> J[5-Fold Stratified Cross-Validation] --> K[Performance Evaluation]
 
-    K --> L[Accuracy]
-    K --> M[Confusion Matrix]
-    K --> N[Classification Report]
-    K --> O[Feature Importance]
+    K --> L[Accuracy] & M[Confusion Matrix] & N[Classification Report] & O[Feature Importance]
 ```
 ### 1. Behavioral Data Collection
 Python scripts capture keyboard and mouse interactions during active desktop sessions.
@@ -57,8 +49,8 @@ Raw interaction events are transformed into structured numerical vectors represe
 ### 3. Feature Importance Analysis
 Before final training, feature importance is evaluated using a **Random Forest-based Gini Mean Decrease in Impurity (MDI)** approach. Gini importance measures how much each feature contributes to reducing node impurity across all decision trees.
 
-> **Figure 1:** Gini importance ranking of the selected keyboard and mouse behavioral features.
-> ![Gini Feature Importance](Images/Gini_importance.png{height=420})
+> <img src="Images/Gini_Importance.png" width="400">
+
 
 ---
 
@@ -66,20 +58,22 @@ Before final training, feature importance is evaluated using a **Random Forest-b
 The dataset is split into training and testing subsets using a **70:30 Stratified Split** to ensure equal class proportions across both sets:
 
 Total Dataset
-├── 70% Training Set  (Model Fitting & Hyperparameter Tuning)
-└── 30% Testing Set   (Holdout Evaluation)
+ * 70% Training Set  (Model Fitting & Hyperparameter Tuning)
+ * 30% Testing Set   (Holdout Evaluation)
 
 
-> **Figure 2:** Stratified Train-Test Split Distribution.
-> ![Train Test Split](Images/Split_Ratio.png)
+
+> <img src="Images/Split_Ratio.png" width="400">
+
 
 ---
 
 ### 5. Supervised Classification & Model Validation
 A **Random Forest Classifier** was trained on the extracted feature set. To assess generalization consistency beyond the holdout set, **5-Fold Stratified Cross-Validation** was performed alongside full performance reporting (Accuracy, Classification Report, Confusion Matrix).
 
-> **Figure 3:** Random Forest classification confusion matrix.
-> ![Confusion Matrix](Images/Confusion_Matrix.png)
+
+>  <img src="Images/Confusion_Matrix.png" width="400">
+
 
 ---
 
