@@ -6,8 +6,9 @@
 
 A machine learning-based behavioral biometrics system for user identification and continuous authentication using keyboard and mouse interaction patterns. 
 
-This repository collects behavioral data from users through Python-based monitoring scripts, extracts relevant behavioral features, evaluates feature importance using **Gini Mean Decrease in Impurity**, and applies a **Random Forest Classifier** to distinguish between users based on their interaction behavior.
+This repository collects behavioral data from users through Python-based monitoring scripts, extracts relevant behavioral features, evaluates feature importance using Gini Mean Decrease in Impurity, and applies a Random Forest Classifier to distinguish between users based on their interaction behavior.
 
+This machine learning model and methodology were utilized in the research presented in the manuscript [Evaluation_of_Machine_Learning_Model.pdf](Evaluation_of_Machine_Learning_Model.pdf).
 ---
 
 ## Research Objective
