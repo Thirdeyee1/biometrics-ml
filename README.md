@@ -58,7 +58,7 @@ Raw interaction events are transformed into structured numerical vectors represe
 Before final training, feature importance is evaluated using a **Random Forest-based Gini Mean Decrease in Impurity (MDI)** approach. Gini importance measures how much each feature contributes to reducing node impurity across all decision trees.
 
 > **Figure 1:** Gini importance ranking of the selected keyboard and mouse behavioral features.
-> ![Gini Feature Importance](Images/Gini_importance.png#width=450)
+> ![Gini Feature Importance](Images/Gini_importance.png|width=450)
 
 ---
 
