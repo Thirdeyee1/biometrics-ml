@@ -58,7 +58,7 @@ Raw interaction events are transformed into structured numerical vectors represe
 Before final training, feature importance is evaluated using a **Random Forest-based Gini Mean Decrease in Impurity (MDI)** approach. Gini importance measures how much each feature contributes to reducing node impurity across all decision trees.
 
 > **Figure 1:** Gini importance ranking of the selected keyboard and mouse behavioral features.
-> ![Gini Feature Importance](docs/images/Gini_importance.png)
+> ![Gini Feature Importance](docs/Images/Gini_importance.png)
 
 ---
 
@@ -71,7 +71,7 @@ Total Dataset
 
 
 > **Figure 2:** 70:30 Stratified Train-Test Split Distribution.
-> ![Train Test Split](docs/images/Split_Ratio.png)
+> ![Train Test Split](docs/Images/Split_Ratio.png)
 
 ---
 
@@ -79,7 +79,7 @@ Total Dataset
 A **Random Forest Classifier** was trained on the extracted feature set. To assess generalization consistency beyond the holdout set, **5-Fold Stratified Cross-Validation** was performed alongside full performance reporting (Accuracy, Classification Report, Confusion Matrix).
 
 > **Figure 3:** Random Forest classification confusion matrix.
-> ![Confusion Matrix](docs/images/Confusion_Matrix.png)
+> ![Confusion Matrix](docs/Images/Confusion_Matrix.png)
 
 ---
 
