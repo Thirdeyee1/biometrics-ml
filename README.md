@@ -19,16 +19,9 @@ Rather than relying solely on traditional static authentication at login, behavi
 ---
 
 ##  Project Workflow
-```mermaid
-flowchart TD
-    A[Keyboard & Mouse Activity] --> B[Data Collection] --> C[5-Second Behavioral Windows] 
-    C --> D[Feature Extraction] --> E[Gini Mean Decrease in Impurity]
-    E --> F[Feature Ranking] --> G[Feature Selection]
-    G --> H[70:30 Stratified Train-Test Split] --> I[Random Forest Classifier]
-    I --> J[5-Fold Stratified Cross-Validation] --> K[Performance Evaluation]
+> <img src="Images/Workflow.jpg" width="400">
 
-    K --> L[Accuracy] & M[Confusion Matrix] & N[Classification Report] & O[Feature Importance]
-```
+
 ### 1. Behavioral Data Collection
 Python scripts capture keyboard and mouse interactions during active desktop sessions.
 * Data is recorded in predefined **behavioral windows**, slicing continuous activity into discrete samples for feature extraction and training.
